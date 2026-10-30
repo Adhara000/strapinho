@@ -19,7 +19,7 @@
   <style>
     /* Fundo experimental da página */
     body {
-      background-color: rgb(42, 112, 115);
+      background-color: rgb(23, 91, 94);
     }
 
     .navbar-brand {
@@ -27,7 +27,7 @@
     }
 
     body>header {
-      background-color: purple;
+      background-color: orange;
     }
 
     body>header i {
@@ -40,6 +40,47 @@
         width: 250px;
       }
     }
+
+    /*
+    Primeiro andar do footer
+    Links dos menus do rodapé
+    */
+    .footer-top a {
+      color: rgb(132, 191, 240);
+      text-decoration: none;
+      margin-left: .7rem;
+    }
+
+    .footer-top a:hover {
+      color: var(--bs-warning);
+    }
+
+    /*
+    Segundo andar do footer
+    Ícones usando cores semânticas do Bootstrap
+    */
+
+    .footer-botton a {
+      color: var(--bs-light);
+    }
+
+    .footer-botton a:hover {
+      color: var(--bs-warning);
+    }
+
+    /*
+    Conteúdo principal
+    Cantos arredondados responsivos
+    */
+
+    body>main>article,
+    body>main>section {
+      border-radius: .4rem .4rem 0 0 ;
+    }
+
+     body>main>aside {
+      border-radius: 0 0 .4rem .4rem;
+     }
   </style>
 </head>
 
@@ -50,8 +91,8 @@
   Referências: https://www.w3schools.com/bootstrap5/bootstrap_navbar.php
   OBS: Vamos substitulir `javascript:void(0)` pelo link de cada página.
   -->
-  <nav class="navbar navbar-expand-md navbar-dark text-bg-success fixed-top">
-    <div class="container">
+  <nav class="container navbar navbar-expand-md navbar-dark text-bg-dark fixed-top mx-auto rounded-bottom">
+    <div class="container-fluid">
 
       <!-- A "brand" (marca) pode ser um nome ou uma imagem. -->
       <a class="navbar-brand" href="index.html"><i class="bi bi-bootstrap-fill text-warning"></i></a>
@@ -104,15 +145,15 @@
   Usando a técnica Jumbotron
   Referências: https://www.w3schools.com/bootstrap5/bootstrap_jumbotron.php
   -->
-  <header class="text-light" style="margin-top: 4rem;">
-    <div class="container p-3">
+  <header class="container rounded text-dark mx-auto p-0" style="margin-top: 4.5rem;">
+    <div class="p-3">
       <h1 class="d-flex align-items-center gap-3 justify-content-center">
         <i class="bi bi-bootstrap"></i> Strapinho
       </h1>
     </div>
   </header>
 
-  <main class="container d-md-flex">
+  <main class="container d-md-flex p-0" style="margin-top: .8rem;">
     <section class="bg-light p-3 flex-grow-1">
 
       <!-- 
@@ -141,47 +182,47 @@
 
   <!-- Rodapé -->
 
-  <footer class="bg-success text-light">
+  <footer class="container  bg-dark text-light rounded-top" style="margin-top: .7rem;">
 
-    <div class="container">
-      <div class="footer-top row">
-        <div class="col-6">
-          <h5>Redes Sociais</h5>
-          <nav class="d-flex flex-column">
-            <a href="#" target="_blank">Link 1</a>
-            <a href="#" target="_blank">Link 2</a>
-            <a href="#" target="_blank">Link 3</a>
-            <a href="#" target="_blank">Link 4</a>
-          </nav>
-        </div>
-
-        <div class="d-none">
-          <h5>Parceiros</h5>
-          <nav class="d-flex flex-column">
-            <a href="#" target="_blank">Link 1</a>
-            <a href="#" target="_blank">Link 2</a>
-            <a href="#" target="_blank">Link 3</a>
-            <a href="#" target="_blank">Link 4</a>
-          </nav>
-        </div>
-
-        <div class="col-6">
-          <h5>Acesso rápido</h5>
-          <nav class="d-flex flex-column">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-            <a href="#">Link 4</a>
-          </nav>
-        </div>
-
+    <!-- footer-top e minha classe -->
+    <div class="footer-top d-flex align-items-center justify-content-around">
+      <div class="p-2 mt-2">
+        <h5>Redes Sociais</h5>
+        <nav class="d-flex flex-column lh-lg">
+          <a href="https://facebook.com/" target="_blank"><i class="bi bi-facebook"></i> <span>Facebook</span></a>
+          <a href="https://instagram.com/" target="_blank"><i class="bi bi-instagram"></i> <span>Instagram</span></a>
+          <a href="https://youtube.com/" target="_blank"><i class="bi bi-youtube"></i> <span>Youtube</span></a>
+          <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i> <span>GitHub.com</span></a>
+        </nav>
       </div>
 
-      <div class="footer-botton">
-        <a href="index.html"><i class="bi bi-house-door-fill"></i></a>
-        <div>&copy; 2026 Strapinho</div>
-        <a href="#top"><i class="bi bi-arrow-up-square-fill"></i></a>
+      <div class="p-2 d-none d-sm-block mt-2">
+        <h5>Parceiros</h5>
+        <nav class="d-flex flex-column lh-lg">
+          <a href="#" target="_blank"><i class="bi bi-snapchat"></i> <span>Snapchat</span></a>
+          <a href="#" target="_blank"><i class="bi bi-bluesky"></i> <span>Bluesky</span></a>
+          <a href="#" target="_blank"><i class="bi bi-pinterest"></i> <span>Pinterest</span></a>
+          <a href="#" target="_blank"><i class="bi bi-behance"></i> <span>Behance</span></a>
+        </nav>
       </div>
+
+      <div class="p-2 mt-2">
+        <h5>Acesso rápido</h5>
+        <nav class="d-flex flex-column lh-lg">
+          <a href="about-site.html"><i class="bi bi-patch-question-fill"></i> <span>O que somos</span></a>
+          <a href="about-author.html"><i class="bi bi-person-badge-fill"></i> <span>Quem somos</span></a>
+          <a href="contacts.html"><i class="bi bi-chat-dots-fill"></i> <span>Faça Contato</span></a>
+          <a href="policies.html"><i class="bi bi-person-lock"></i> <span>Sua privacidade</span></a>
+        </nav>
+      </div>
+
+    </div>
+
+    <!-- footer-botton é minha classe -->
+    <div class="footer-botton d-flex align-items-center justify-content-between border-top border-secondary mt-3">
+      <a href="index.html" class="fs-2 py-1"><i class="bi bi-house-door-fill"></i></a>
+      <div>&copy; 2026 Strapinho</div>
+      <a href="#top" class="fs-2"><i class="bi bi-arrow-up-square-fill"></i></a>
     </div>
 
   </footer>
